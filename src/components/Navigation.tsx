@@ -57,6 +57,9 @@ export function Navigation() {
             <Link href="/faq" className="text-gray-300 hover:text-white transition-colors">
               FAQ
             </Link>
+            <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
+              About
+            </Link>
           </div>
 
           {/* Auth Section */}
@@ -142,6 +145,13 @@ export function Navigation() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 FAQ
+              </Link>
+              <Link
+                href="/about"
+                className="text-gray-300 hover:text-white transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
               </Link>
               
               {session ? (
