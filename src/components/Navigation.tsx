@@ -51,6 +51,9 @@ export function Navigation() {
             <Link href="/dashboard" className="text-gray-300 hover:text-white transition-colors">
               Dashboard
             </Link>
+            <Link href="/blog" className="text-gray-300 hover:text-white transition-colors">
+              Guides
+            </Link>
             <Link href="/faq" className="text-gray-300 hover:text-white transition-colors">
               FAQ
             </Link>
@@ -125,6 +128,13 @@ export function Navigation() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Dashboard
+              </Link>
+              <Link
+                href="/blog"
+                className="text-gray-300 hover:text-white transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Guides
               </Link>
               <Link
                 href="/faq"

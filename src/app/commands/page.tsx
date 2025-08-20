@@ -5,6 +5,8 @@ import { Navigation } from "@/components/Navigation"
 import { botCommands } from "@/lib/data"
 import { Search, Code, Music, Shield, Server, Wrench, Zap } from "lucide-react"
 import { useState } from "react"
+import { generateSEOMetadata } from "@/lib/seo"
+import Head from "next/head"
 
 const categoryIcons = {
   General: Zap,
@@ -13,6 +15,23 @@ const categoryIcons = {
   Server: Server,
   Utility: Wrench,
 }
+
+export const metadata = generateSEOMetadata({
+  title: "Cryonix Commands - 80+ Discord Bot Commands | Music, Moderation, Games",
+  description: "Complete list of Cryonix Discord bot commands. 80+ commands including music, moderation, games, economy, server management, and utility features. All commands are free!",
+  keywords: [
+    "discord bot commands",
+    "cryonix commands",
+    "discord music commands",
+    "discord moderation commands",
+    "discord games commands",
+    "discord utility commands",
+    "discord economy commands",
+    "free discord bot commands",
+    "discord bot help"
+  ],
+  url: "https://cryonix-web.vercel.app/commands"
+})
 
 export default function CommandsPage() {
   const [searchTerm, setSearchTerm] = useState("")

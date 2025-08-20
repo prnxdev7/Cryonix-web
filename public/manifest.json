@@ -1,0 +1,118 @@
+{
+  "name": "Cryonix - Premium Discord Bot Dashboard",
+  "short_name": "Cryonix",
+  "description": "Cryonix is the ultimate Discord bot with 80+ commands for music, moderation, games, economy, and server management. Free, verified, 24/7 uptime.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#7c3aed",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "dir": "ltr",
+  "id": "cryonix-discord-bot",
+  "categories": ["entertainment", "productivity", "social", "utilities"],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Cryonix Dashboard Desktop View"
+    },
+    {
+      "src": "/screenshots/mobile.png", 
+      "sizes": "375x812",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Cryonix Dashboard Mobile View"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-512x512.png", 
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16", 
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "View Commands",
+      "short_name": "Commands",
+      "description": "Browse all 80+ Cryonix bot commands",
+      "url": "/commands",
+      "icons": [
+        {
+          "src": "/icon-192x192.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard", 
+      "description": "Access your Discord server dashboard",
+      "url": "/dashboard",
+      "icons": [
+        {
+          "src": "/icon-192x192.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Invite Bot",
+      "short_name": "Invite",
+      "description": "Add Cryonix to your Discord server",
+      "url": "https://discord.com/oauth2/authorize?client_id=1406638054860521472&permissions=8&scope=bot%20applications.commands",
+      "icons": [
+        {
+          "src": "/icon-192x192.png", 
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://discord.com/oauth2/authorize?client_id=1406638054860521472&permissions=8&scope=bot%20applications.commands",
+      "id": "discord-bot-invite"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "discord",
+      "url": "/invite?guild_id=%s"
+    }
+  ]
+}

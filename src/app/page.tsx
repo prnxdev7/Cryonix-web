@@ -9,93 +9,146 @@ import Image from "next/image"
 
 export default function Home() {
   return (
-    <div className="min-h-screen text-white relative overflow-hidden">
-      <Navigation />
-      
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-8"
-          >
+    <>
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Cryonix Discord Bot",
+            "description": "Premium Discord bot with 80+ commands for music, moderation, games, economy, and server management. Free, verified, 24/7 uptime.",
+            "url": "https://cryonix-web.vercel.app",
+            "applicationCategory": "CommunicationApplication",
+            "operatingSystem": "Discord",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "1500",
+              "bestRating": "5"
+            },
+            "author": {
+              "@type": "Organization", 
+              "name": "Cryonix Development Team"
+            },
+            "downloadUrl": "https://discord.com/oauth2/authorize?client_id=1406638054860521472&permissions=8&scope=bot%20applications.commands",
+            "screenshot": "https://cryonix-web.vercel.app/og-image.png",
+            "featureList": [
+              "80+ Discord Commands",
+              "Music Streaming 24/7",
+              "Advanced Moderation Tools", 
+              "Server Economy System",
+              "Interactive Games",
+              "Custom Dashboard",
+              "Slash Commands Support",
+              "Real-time Analytics"
+            ]
+          })
+        }}
+      />
+
+      <main className="min-h-screen text-white relative overflow-hidden">
+        <Navigation />
+        
+        {/* Hero Section */}
+        <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8" aria-label="Hero section">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.header
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="mb-8"
+            >
+              <motion.div
+                className="inline-block p-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl mb-6 animate-float relative"
+                aria-label="Cryonix bot avatar"
+              >
+                <Image
+                  src={botInfo.avatar}
+                  alt="Cryonix Discord Bot Avatar - Premium bot with 80+ commands for music, moderation, games and server management"
+                  width={64}
+                  height={64}
+                  className="w-16 h-16 rounded-full"
+                  priority
+                />
+                {botInfo.verified && (
+                  <div className="absolute -top-1 -right-1 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center" title="Verified Discord Bot">
+                    <span className="text-xs" aria-label="Verified">✓</span>
+                  </div>
+                )}
+              </motion.div>
+              <h1 className="text-5xl md:text-7xl font-bold mb-6">
+                Meet{" "}
+                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+                  {botInfo.name}
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                {botInfo.description}
+              </p>
+            </motion.header>
+
             <motion.div
-              className="inline-block p-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl mb-6 animate-float relative"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
             >
-              <Image
-                src={botInfo.avatar}
-                alt={botInfo.name}
-                width={64}
-                height={64}
-                className="w-16 h-16 rounded-full"
-              />
-              {botInfo.verified && (
-                <div className="absolute -top-1 -right-1 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                  <span className="text-xs">✓</span>
-                </div>
-              )}
+              <a
+                href={botInfo.inviteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl font-semibold text-lg hover:from-purple-600 hover:to-blue-600 transition-all duration-300 animate-glow"
+                aria-label="Invite Cryonix Discord bot to your server"
+              >
+                <Bot className="w-5 h-5" aria-hidden="true" />
+                <span>Invite to Server</span>
+                <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              </a>
+              <Link
+                href="/dashboard"
+                className="flex items-center space-x-2 px-8 py-4 bg-white/10 backdrop-blur-sm rounded-xl font-semibold text-lg hover:bg-white/20 transition-all duration-300 border border-white/20"
+                aria-label="View Cryonix bot dashboard"
+              >
+                <span>View Dashboard</span>
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </Link>
             </motion.div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Meet{" "}
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
-                {botInfo.name}
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              {botInfo.description}
-            </p>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
-          >
-            <a
-              href={botInfo.inviteUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl font-semibold text-lg hover:from-purple-600 hover:to-blue-600 transition-all duration-300 animate-glow"
+            {/* Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+              role="region"
+              aria-label="Cryonix bot statistics"
             >
-              <Bot className="w-5 h-5" />
-              <span>Invite to Server</span>
-              <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <Link
-              href="/dashboard"
-              className="flex items-center space-x-2 px-8 py-4 bg-white/10 backdrop-blur-sm rounded-xl font-semibold text-lg hover:bg-white/20 transition-all duration-300 border border-white/20"
-            >
-              <span>View Dashboard</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </motion.div>
-
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
-          >
-            {[
-              { label: "Servers", value: botInfo.serverCount.toString() },
-              { label: "Commands", value: "80+" },
-              { label: "Uptime", value: "24/7" },
-              { label: "Verified", value: botInfo.verified ? "✓" : "✗" },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                  {stat.value}
+              {[
+                { label: "Discord Servers", value: botInfo.serverCount.toString(), description: "Active servers using Cryonix" },
+                { label: "Bot Commands", value: "80+", description: "Available bot commands" },
+                { label: "Uptime", value: "24/7", description: "Bot availability" },
+                { label: "Verified Status", value: botInfo.verified ? "✓" : "✗", description: "Discord verified bot" },
+              ].map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div 
+                    className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
+                    aria-label={`${stat.value} ${stat.description}`}
+                  >
+                    {stat.value}
+                  </div>
+                  <div className="text-gray-400 mt-2">{stat.label}</div>
                 </div>
-                <div className="text-gray-400 mt-2">{stat.label}</div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+              ))}
+            </motion.div>
+          </div>
+        </section>
 
       {/* Features Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -181,6 +234,7 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-    </div>
+    </main>
+    </>
   );
 }

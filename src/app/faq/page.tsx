@@ -5,6 +5,23 @@ import { Navigation } from "@/components/Navigation"
 import { faqs } from "@/lib/data"
 import { ChevronDown, ChevronUp, HelpCircle, MessageCircle, ExternalLink } from "lucide-react"
 import { useState } from "react"
+import { generateSEOMetadata } from "@/lib/seo"
+
+export const metadata = generateSEOMetadata({
+  title: "Cryonix FAQ - Discord Bot Help & Support | Common Questions Answered",
+  description: "Get answers to frequently asked questions about Cryonix Discord bot. Learn about setup, commands, permissions, features, and troubleshooting. Free 24/7 support available.",
+  keywords: [
+    "cryonix faq",
+    "discord bot help",
+    "discord bot setup",
+    "discord bot questions",
+    "cryonix support",
+    "discord bot troubleshooting",
+    "discord bot permissions",
+    "how to use discord bot"
+  ],
+  url: "https://cryonix-web.vercel.app/faq"
+})
 
 export default function FAQPage() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null)
