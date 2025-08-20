@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🤖 Cryonix Discord Bot Dashboard
 
-## Getting Started
+A modern Discord bot landing platform with authentication, server management, and comprehensive bot features.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **🎵 Music Player** - High-quality music streaming from multiple sources
+- **🛡️ Moderation** - Comprehensive moderation tools and auto-moderation
+- **🎮 Fun & Games** - 80+ commands including games, economy, and utilities
+- **📊 Server Management** - Welcome messages, auto-roles, custom commands
+- **🔐 Discord OAuth2** - Secure authentication with Discord
+- **📱 Responsive Design** - Beautiful UI with animations and modern design
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: Next.js 15 with App Router
+- **Authentication**: NextAuth.js with Discord OAuth2
+- **Database**: PostgreSQL (Neon)
+- **ORM**: Prisma
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Deployment**: Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏃‍♂️ Quick Start
 
-## Learn More
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Set up environment variables (see `.env.example`)
+4. Run database migrations: `npx prisma db push`
+5. Start development server: `npm run dev`
 
-To learn more about Next.js, take a look at the following resources:
+## 📱 Live Demo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Website**: [Your Vercel URL]
+- **Bot Invite**: [Discord Bot Invite Link]
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🤖 Bot Information
 
-## Deploy on Vercel
+- **Name**: Cryonix
+- **Commands**: 80+
+- **Servers**: 2+
+- **Status**: Verified ✓
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔧 Environment Variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Check `.env.example` for required environment variables.
+
+## 📄 License
+
+MIT License
