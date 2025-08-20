@@ -4,9 +4,9 @@ import { motion } from "framer-motion"
 import { signIn, getSession } from "next-auth/react"
 import { Bot, Shield, Zap, ExternalLink, Loader2, AlertCircle } from "lucide-react"
 import { useRouter, useSearchParams } from "next/navigation"
-import { useEffect, useState } from "react"
+import { useEffect, useState, Suspense } from "react"
 
-export default function SignInPage() {
+function SignInContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [isLoading, setIsLoading] = useState(false)
@@ -194,5 +194,24 @@ export default function SignInPage() {
         </div>
       </motion.div>
     </div>
+  )
+}
+
+function LoadingFallback() {
+  return (
+    <div className="min-h-screen text-white flex items-center justify-center px-4 bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 mx-auto mb-4"></div>
+        <p className="text-gray-300">Loading...</p>
+      </div>
+    </div>
+  )
+}
+
+export default function SignInPage() {
+  return (
+    <Suspense fallback={<LoadingFallback />}>
+      <SignInContent />
+    </Suspense>
   )
 }
