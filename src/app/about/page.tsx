@@ -3,18 +3,18 @@ import { AboutClient } from '@/app/about/about-client'
 import { generateSEOMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = generateSEOMetadata({
-  title: 'About Cryonix | Meet the Developer & Learn About the Bot',
-  description: 'Learn about PRNX, the developer behind Cryonix Discord bot, and discover what makes this powerful bot special with 80+ commands and advanced features.',
+  title: 'About the Developer | PRNX - Creator of Cryonix Discord Bot',
+  description: 'Meet PRNX, the passionate full-stack developer behind Cryonix Discord bot. Discover the expertise and dedication that drives innovative Discord community solutions.',
   url: 'https://cryonix-web.vercel.app/about',
   keywords: [
-    'cryonix developer',
-    'discord bot creator',
     'PRNX developer',
-    'about cryonix',
-    'bot features',
-    'discord bot development',
-    'community tools',
-    'server management bot'
+    'cryonix creator',
+    'discord bot developer',
+    'full-stack developer',
+    'discord bot specialist',
+    'community tools developer',
+    'javascript developer',
+    'typescript developer'
   ]
 })
 

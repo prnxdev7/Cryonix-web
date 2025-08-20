@@ -58,7 +58,7 @@ export function Navigation() {
               FAQ
             </Link>
             <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
-              About
+              About the Developer
             </Link>
           </div>
 
@@ -151,7 +151,7 @@ export function Navigation() {
                 className="text-gray-300 hover:text-white transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                About
+                About the Developer
               </Link>
               
               {session ? (
